@@ -7,5 +7,6 @@ router.get('/', contactsController.getAll);
 
 router.get('/:id', contactsController.getSingle);
 
+router.post('/', contactsController.createHobbie);
 
 module.exports = router;

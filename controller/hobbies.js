@@ -18,7 +18,22 @@ const getAll = async (req, res) => {
     });
   };
 
+  const createHobbie = async (req, res) => {
+    const contact = {
+      name: req.body.name,
+      description: req.body.description,
+      benefit: req.body.benefit
+    };
+    const response = await mongodb.getDb().db().collection('hobbies').insertOne(contact);
+    if (response.acknowledged) {
+      res.status(201).json(response);
+    } else {
+      res.status(500).json(response.error || 'Some error occurred while creating the contact.');
+    }
+  };
+
   module.exports = {
     getAll,
-    getSingle
+    getSingle,
+    createHobbie
   };
