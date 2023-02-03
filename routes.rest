@@ -1,0 +1,6 @@
+//LOCALHOST
+
+GET http://localhost:8080/hobbies
+###
+
+GET http://localhost:8080/hobbies/63dd6651c5dff5487828f8b9
