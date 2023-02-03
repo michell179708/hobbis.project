@@ -5,7 +5,7 @@ const doc = {
         title : 'Second API for the new project call HOBBIES',
         description: 'this API work witht the database MONGODB to get,update and delete contact information'
     },
-    host: 'localhost/8080',
+    host: 'localhost:8080',
     schemes: ['http']
 };
 
