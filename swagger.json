@@ -5,10 +5,10 @@
     "description": "this API work witht the database MONGODB to get,update and delete contact information",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "project-hobbiescse341.onrender.com/",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/api-docs": {
