@@ -2,6 +2,7 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
+     // #swagger.tags = ['GetallHobbies']
     const result = await mongodb.getDb().db().collection('hobbies').find();
     result.toArray().then((lists) => {
       res.setHeader('Content-Type', 'application/json');
@@ -10,6 +11,7 @@ const getAll = async (req, res) => {
   };
 
   const getSingle = async (req, res) => {
+     // #swagger.tags = ['GetOneHobbie']
     const userId = new ObjectId(req.params.id);
     const result = await mongodb.getDb().db().collection('hobbies').find({ _id: userId });
     result.toArray().then((lists) => {
@@ -19,6 +21,7 @@ const getAll = async (req, res) => {
   };
 
   const createHobbie = async (req, res) => {
+     // #swagger.tags = ['CreateNewHobbie']
     const contact = {
       name: req.body.name,
       description: req.body.description,
