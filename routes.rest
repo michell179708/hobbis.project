@@ -4,3 +4,14 @@ GET http://localhost:8080/hobbies
 ###
 
 GET http://localhost:8080/hobbies/63dd6651c5dff5487828f8b9
+
+###
+POST http://localhost:8080/hobbies HTTP/1.1
+content-type: application/json
+
+{
+"name":"read", 
+"description":"Reading is one of the examples of ideal hobbies for traveling and training the brain at the same time. With one of the fun hobbies", 
+"benefit":"You are transported to other places, you exercise your memory and your creativity, you improve your concentration and you become more empathetic!"
+ 
+}
