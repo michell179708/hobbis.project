@@ -5,7 +5,7 @@ const doc = {
         title : 'Second API for the new project call HOBBIES',
         description: 'this API work witht the database MONGODB to get,update and delete contact information'
     },
-    host: 'project-hobbiescse341.onrender.com/',
+    host: 'project-hobbiescse341.onrender.com',
     schemes: ['https']
 };
 
