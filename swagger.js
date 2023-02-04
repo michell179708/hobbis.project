@@ -5,8 +5,8 @@ const doc = {
         title : 'Second API for the new project call HOBBIES',
         description: 'this API work witht the database MONGODB to get,update and delete contact information'
     },
-    host: 'localhost:8080',
-    schemes: ['http']
+    host: 'project-hobbiescse341.onrender.com/',
+    schemes: ['https']
 };
 
 const outputFile ='./swagger.json';
