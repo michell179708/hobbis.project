@@ -35,8 +35,57 @@ const getAll = async (req, res) => {
     }
   };
 
+  const updateHobbie = async (req, res) => {
+    // #swagger.tags = ['UpdatHobbie']
+    const userId = new ObjectId(req.params.id);
+    const newInfo = {
+      name: req.body.name,
+      description: req.body.description,
+      benefit: req.body.benefit,
+    };
+    const response = await mongodb
+      .getDb()
+      .db()
+      .collection("hobbies")
+      .replaceOne({ _id: userId }, newInfo);
+    if (response.acknowledged) {
+      res.status(204).json(response);
+    } else {
+      res
+        .status(500)
+        .json(
+          response.error || "Some error occurred while creating the contact."
+        );
+    }
+  };
+
+  const deleteHobbie = async (req, res) => {
+    // #swagger.tags = ['DeleteContact']
+    const userIdDelete = new ObjectId (req.params.id);
+    const response = await mongodb
+    .getDb()
+    .db()
+    .collection("hobbies")
+    .deleteOne({ _id: userIdDelete}, true);
+    console.log('HobbieDelete');
+    if (response.acknowledged) {
+      res.status(200).json(response);
+    } else {
+      res
+        .status(500)
+        .json(
+          response.error || "Some error occurred while deleting the contact."
+        );
+    }
+  };
+  
+  
+
+
   module.exports = {
     getAll,
     getSingle,
-    createHobbie
+    createHobbie,
+    updateHobbie,
+    deleteHobbie
   };

@@ -9,4 +9,8 @@ router.get('/:id', contactsController.getSingle);
 
 router.post('/', contactsController.createHobbie);
 
+router.put('/:id', contactsController.updateHobbie);
+
+router.delete('/:id', contactsController.deleteHobbie);
+
 module.exports = router;
