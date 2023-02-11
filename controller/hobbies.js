@@ -31,7 +31,7 @@ const getAll = async (req, res) => {
     if (response.acknowledged) {
       res.status(201).json(response);
     } else {
-      res.status(500).json(response.error || 'Some error occurred while creating the contact.');
+      res.status(500).json(response.error || 'Some error occurred while creating the hobby.');
     }
   };
 
@@ -54,7 +54,7 @@ const getAll = async (req, res) => {
       res
         .status(500)
         .json(
-          response.error || "Some error occurred while creating the contact."
+          response.error || "Some error occurred while creating the hobby."
         );
     }
   };
@@ -74,7 +74,7 @@ const getAll = async (req, res) => {
       res
         .status(500)
         .json(
-          response.error || "Some error occurred while deleting the contact."
+          response.error || "Some error occurred while deleting the hobby."
         );
     }
   };
