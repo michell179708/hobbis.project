@@ -1,23 +1,32 @@
+const { response } = require('express');
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
      // #swagger.tags = ['GetallHobbies']
     const result = await mongodb.getDb().db().collection('hobbies').find();
+    if(result.acknowledged){
     result.toArray().then((lists) => {
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(lists);
     });
+  }else{
+    res.status(500).json(response.error || 'Some error occurred while we try get all the hobbies.');
+  }
   };
 
   const getSingle = async (req, res) => {
      // #swagger.tags = ['GetOneHobbie']
     const userId = new ObjectId(req.params.id);
     const result = await mongodb.getDb().db().collection('hobbies').find({ _id: userId });
+    if(result.acknowledged){
     result.toArray().then((lists) => {
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(lists[0]);
     });
+  }else{
+    res.status(500).json(response.error || 'Some error occurred while we try to get the hobby with the ID.');
+  }
   };
 
   const createHobbie = async (req, res) => {

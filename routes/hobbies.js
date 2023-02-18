@@ -11,6 +11,6 @@ router.post('/', hobbiesController.createHobbie);
 
 router.put('/:id', hobbiesController.updateHobbie);
 
-router.delete('/:id', hobbiesControllernpm.deleteHobbie);
+router.delete('/:id', hobbiesController.deleteHobbie);
 
 module.exports = router;
