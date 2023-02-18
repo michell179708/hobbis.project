@@ -17,7 +17,7 @@ content-type: application/json
 }
 
 ###
-PUT http://localhost:8080/hobbies/63de4b9cc84a39f5cfb77d9f  HTTP/1.1
+PUT http://localhost:8080/hobbies/63dd6651c5dff5487828f8bb  HTTP/1.1
 content-type: application/json
 
 {
@@ -28,6 +28,6 @@ content-type: application/json
 }
 
 ###
-DELETE http://localhost:8080/hobbies/63de4b9cc84a39f5cfb77d9f HTTP/1.1
+DELETE http://localhost:8080/hobbies/63dd6651c5dff5487828f8bb HTTP/1.1
 content-type: application/json
 

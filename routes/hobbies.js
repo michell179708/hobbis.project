@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-const contactsController = require('../controller/hobbies');
+const hobbiesController = require('../controller/hobbies');
 
-router.get('/', contactsController.getAll);
+router.get('/', hobbiesController.getAll);
 
-router.get('/:id', contactsController.getSingle);
+router.get('/:id', hobbiesController.getSingle);
 
-router.post('/', contactsController.createHobbie);
+router.post('/', hobbiesController.createHobbie);
 
-router.put('/:id', contactsController.updateHobbie);
+router.put('/:id', hobbiesController.updateHobbie);
 
-router.delete('/:id', contactsController.deleteHobbie);
+router.delete('/:id', hobbiesControllernpm.deleteHobbie);
 
 module.exports = router;
