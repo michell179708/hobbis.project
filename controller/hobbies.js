@@ -2,7 +2,7 @@ const { response } = require('express');
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
-const {validateData}= require('../helpers/validation-middleware');
+const {authSchema}= require('../helpers/validate_schema');
 
 const getAll = async (req, res) => {
      // #swagger.tags = ['GetallHobbies']
@@ -30,11 +30,13 @@ const getAll = async (req, res) => {
 
   const createHobbie = async (req, res) => {
      // #swagger.tags = ['CreateNewHobbie']
-    const contact = {
+    const hobby = {
       name: req.body.name,
       description: req.body.description,
       benefit: req.body.benefit
     };
+
+    const result = await authSchema.validateAsync(hobby);
     const response = await mongodb.getDb().db().collection('hobbies').insertOne(contact);
     if (response.acknowledged) {
       res.status(201).json(response);
