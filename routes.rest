@@ -3,7 +3,7 @@
 GET http://localhost:8080/hobbies
 ###
 
-GET http://localhost:8080/hobbies/63dd6651c5dff5487828f8b9
+GET http://localhost:8080/hobbies/63dd6651c5dff5487828f8ba
 
 ###
 POST http://localhost:8080/hobbies HTTP/1.1
