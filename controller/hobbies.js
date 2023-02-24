@@ -32,8 +32,8 @@ const getAll = async (req, res) => {
       benefit: req.body.benefit
     };
 
-    const result = await authSchema.validateAsync(hobby);
-    const response = await mongodb.getDb().db().collection('hobbies').insertOne(contact);
+   
+    const response = await mongodb.getDb().db().collection('hobbies').insertOne(hobby);
     if (response.acknowledged) {
       res.status(201).json(response);
     } else {
