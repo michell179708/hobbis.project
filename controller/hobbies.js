@@ -7,15 +7,11 @@ const {authSchema}= require('../helpers/validate_schema');
 const getAll = async (req, res) => {
      // #swagger.tags = ['GetallHobbies']
     const result = await mongodb.getDb().db().collection('hobbies').find();
-    if(result.acknowledged){
     result.toArray().then((lists) => {
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(lists);
     });
-  }else{
-    res.status(500).json(response.error || 'Some error occurred while we try get all the hobbies.');
-  }
-  };
+ };
 
   const getSingle = async (req, res) => {
      // #swagger.tags = ['GetOneHobbie']
